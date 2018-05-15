@@ -57,7 +57,14 @@ void print_in_binary(uint8_t byte) {
             }
         }
     }
-
+struct student{
+    char name[17];
+    uint16_t year;
+    float sred_ball;
+    uint8_t sex:1;
+    int courseValue;
+    student * starosta;
+};
 
 int main()
 {
@@ -127,5 +134,36 @@ int main()
         break;
 
     }
+    student stud[3];
+    {
+            stud[0];{"Ivan",19,3.9,1,1,&stud[2];
+
+        };
+    stud[1];{
+            "Dania",18,1.9,1,1,&stud[2];
+        };
+        stud[2];{
+            "Artem",18,5,1,1,nullptr;
+        };
+    };
+
+cout<<'\n'<<"Address of array: "<<&stud<<'\n';
+    cout<<"Size of array: "<<sizeof(stud)<<'\n';
+    cout<<"Address of element: "<<"\t size of element: \n";
+    for( int i=0;i<3;i++){
+        cout<<i<<'\t'<<&stud[i]<<'\t'<<sizeof(stud[i])<<'\n';
+    }
+    cout<<"FOR FIRST ELEM OF ARREY: \n";
+    cout<<"Address of field: "<<"\t size of field: "<<"\t offset: \n";
+    cout<<"NAME:        \t"<<&stud[2].name;
+    cout<<'\t'<<sizeof(&stud[2].name)<<"\t"<<offsetof(struct student,name)<<'\n';
+    cout<<"Year:        \t"<<&stud[2].year;
+    cout<<'\t'<<sizeof(&stud[2].year)<<"\t"<<offsetof(struct student,year)<<'\n';
+    cout<<"sredni ball: \t"<<&stud[2].sred_ball;
+    cout<<'\t'<<sizeof(&stud[2].sred_ball)<<"\t"<<offsetof(struct student,sred_ball)<<'\n';
+    cout<<"course:      \t"<<&stud[2].courseValue;
+    cout<<'\t'<<sizeof(&stud[2].courseValue)<<"\t"<<offsetof(struct student,courseValue)<<'\n';
+    cout<<"starosta:    \t"<<&stud[2].starosta;
+    cout<<'\t'<<sizeof(&stud[2].starosta)<<"\t"<<offsetof(struct student,starosta)<<'\n';
 
 }
